@@ -171,7 +171,7 @@ fi
 patchdir=$(pwd)/$basedir/patches
 scriptdir=$(pwd)/$basedir/scripts
 
-archives="binutils-${BINUTILS_VER}.tar.xz gcc-${GCC_VER}.tar.xz newlib-${NEWLIB_VER}.tar.gz"
+archives="binutils-${BINUTILS_VER}.tar.xz newlib-${NEWLIB_VER}.tar.gz"
 
 if [ $VERSION -eq 2 ]; then
 	archives="binutils-${MN_BINUTILS_VER}.tar.bz2 $archives"
@@ -204,6 +204,7 @@ do
 	if [ ! -f $archive ]; then
 		$FETCH https://downloads.devkitpro.org/$archive || { echo "Error: Failed to download $archive"; exit 1; }
 	fi
+	$FETCH https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz || { echo "Error: Failed to download gcc-14.1.0.tar.xz"; exit 1;}
 done
 
 cd $BUILDSCRIPTDIR
