@@ -1,0 +1,16 @@
+{
+    "name": "DevContainer for 3DS Project",
+    "dockerFile": "Dockerfile",
+    "mounts": [
+      "source=/workspaces/http-ftp/3ds_server_project,target=/workspace,type=bind,consistency=cached"
+    ],
+    "remoteUser": "codespace",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+      "ms-vscode.cpptools"
+    ],
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    }
+  }
+  
